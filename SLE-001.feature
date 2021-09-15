@@ -3,10 +3,14 @@ Feature: Checkout for Shopping Cart
 Scenario: User choose payment method for paying order 
 
 Given User log in on SLE account
-When User type word in blank space on top of the page in order to search products in that “Search product” field at the top of the page
-And User choose products to buy by clicking on them
-And User add that products to shopping cart
-Then Products are added in shopping cart
-When User mark one of two desired payment methods
-Then Circle in front of Payment method user choose is marked
-But Circle in front of Payment method user choose disappears
+When User type word in blank space on top of the page marked as "Search product" in order to find products
+And User click on product that wants to buy 
+And User is redirected to page with description of that product with button "buy now" or "claim" button
+And User add that products to shopping cart by clicking on "buy now" / "claim" button
+And User click on icon for shopping cart in upper right corner
+And User is redirected to shopping cart page
+And User click on "checkout now" button at the end of the page
+And User is redirected to page with payment methods
+And User mark one of two offered payment methods
+Then Circle in front of Payment method user choosed should be marked
+But Circle in front of Payment method user choosed disappears
